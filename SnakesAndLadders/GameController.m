@@ -17,10 +17,17 @@
     return self;
 }
 
-- (NSInteger)rollDice {
+- (BOOL)rollDice:(Player *)player {
     int roll = arc4random_uniform(6)+1;
     NSLog(@"You rolled a %d", roll);
-    return roll;
+    player.currentSquare += roll;
+    if(player.currentSquare >= 100){
+        NSLog(@"You reached 100. Congrats on winning!");
+        return YES;
+    } else {
+        NSLog(@"You landed on %ld", (long)player.currentSquare);
+        return NO;
+    }
 }
 
 -(void)checkForSpecialTiles:(Player *)player {

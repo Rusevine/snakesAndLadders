@@ -17,15 +17,6 @@
     return self;
 }
 
--(BOOL)updateSquare:(NSInteger)roll {
-    self.currentSquare += roll;
-    if(self.currentSquare >= 100){
-        NSLog(@"You reached 100. Congrats on winning!");
-        return YES;
-    } else {
-        NSLog(@"You landed on %ld", (long)self.currentSquare);
-        return NO;
-    }
-}
+
 
 @end

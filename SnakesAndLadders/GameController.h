@@ -11,7 +11,7 @@
 
 @interface GameController : NSObject
 
--(NSInteger) rollDice;
+-(BOOL) rollDice:(Player*)player;
 -(void) checkForSpecialTiles:(Player *)player;
 +(NSString*)userInputandParse;
 

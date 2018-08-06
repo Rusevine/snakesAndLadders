@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
             NSString *roll = [GameController userInputandParse];
             
             if([roll isEqualToString:@"roll"]){
-                gameOver = [player_one updateSquare:[game rollDice]];
+                gameOver = [game rollDice:player_one];
                 [game checkForSpecialTiles:player_one];
             }
         }
