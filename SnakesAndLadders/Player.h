@@ -14,6 +14,4 @@
 @property (nonatomic) NSInteger currentSquare;
 
 
-
-
 @end

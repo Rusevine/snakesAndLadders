@@ -7,21 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GameController.h"
+#import "PlayerManager.h"
 #import "Player.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        GameController *game = [[GameController alloc] init];
+        PlayerManager *game = [[PlayerManager alloc] init];
         Player *player_one = [[Player alloc] init];
         BOOL gameOver = NO;
         
         while(gameOver == NO){
             
             NSLog(@"Type 'roll' to roll the dice.");
-            NSString *roll = [GameController userInputandParse];
+            NSString *roll = [PlayerManager userInputandParse];
             
-            if([roll isEqualToString:@"roll"]){
+            if([roll isEqualToString:@"roll"]||[roll isEqualToString:@"r"]){
                 gameOver = [game rollDice:player_one];
                 [game checkForSpecialTiles:player_one];
             }

@@ -6,13 +6,13 @@
 //  Copyright © 2018 wiljay. All rights reserved.
 //
 
-#import "GameController.h"
+#import "PlayerManager.h"
 
-@implementation GameController
+@implementation PlayerManager
 
 -(instancetype) init {
     if (self =[super init]){
-        
+        _players = [[NSMutableArray alloc] init];
     }
     return self;
 }

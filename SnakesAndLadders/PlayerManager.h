@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Player.h"
 
-@interface GameController : NSObject
+@interface PlayerManager : NSObject
+
+@property (nonatomic) NSMutableArray *players;
 
 -(BOOL) rollDice:(Player*)player;
 -(void) checkForSpecialTiles:(Player *)player;
