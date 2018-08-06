@@ -13,5 +13,6 @@
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSInteger currentSquare;
 
+-(instancetype) initWithName:(NSString *)name;
 
 @end

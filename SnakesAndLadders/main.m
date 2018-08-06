@@ -13,6 +13,8 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         PlayerManager *game = [[PlayerManager alloc] init];
+        [game createPlayers:2];
+        
         Player *player_one = [[Player alloc] init];
         BOOL gameOver = NO;
         

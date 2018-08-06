@@ -10,12 +10,12 @@
 
 @implementation Player
 
--(instancetype) init {
+- (instancetype) initWithName:(NSString *)name{
     if(self = [super init]){
-    _currentSquare = 1;
+        _currentSquare = 1;
+        _name = name;
     }
     return self;
 }
-
 
 @end

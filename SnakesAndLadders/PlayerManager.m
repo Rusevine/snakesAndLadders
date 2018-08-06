@@ -17,6 +17,14 @@
     return self;
 }
 
+-(void) createPlayers:(int)playerCount{
+    for(int i = 0; i < playerCount; i++){
+        NSString *name = [[NSString alloc] initWithFormat:@"Player %d",(i+1)];
+        Player *player = [[Player alloc] initWithName:name];
+        [self.players addObject:player];
+    }
+}
+
 - (BOOL)rollDice:(Player *)player {
     int roll = arc4random_uniform(6)+1;
     NSLog(@"You rolled a %d", roll);

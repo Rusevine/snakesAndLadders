@@ -13,6 +13,7 @@
 
 @property (nonatomic) NSMutableArray *players;
 
+-(void) createPlayers:(int)playerCount;
 -(BOOL) rollDice:(Player*)player;
 -(void) checkForSpecialTiles:(Player *)player;
 +(NSString*)userInputandParse;
