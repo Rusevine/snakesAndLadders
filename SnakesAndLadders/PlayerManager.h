@@ -12,9 +12,11 @@
 @interface PlayerManager : NSObject
 
 @property (nonatomic) NSMutableArray *players;
+@property (nonatomic) Player *currentPlayer;
+@property (nonatomic) NSInteger currentIndex;
 
 -(void) createPlayers:(int)playerCount;
--(BOOL) rollDice:(Player*)player;
+-(BOOL) rollDice:(int)playerCount;
 -(void) checkForSpecialTiles:(Player *)player;
 +(NSString*)userInputandParse;
 

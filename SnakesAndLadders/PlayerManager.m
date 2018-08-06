@@ -13,6 +13,7 @@
 -(instancetype) init {
     if (self =[super init]){
         _players = [[NSMutableArray alloc] init];
+        _currentIndex = 0;
     }
     return self;
 }
@@ -25,17 +26,30 @@
     }
 }
 
-- (BOOL)rollDice:(Player *)player {
+- (BOOL)rollDice:(int)playerCount{
+    
     int roll = arc4random_uniform(6)+1;
-    NSLog(@"You rolled a %d", roll);
-    player.currentSquare += roll;
-    if(player.currentSquare >= 100){
-        NSLog(@"You reached 100. Congrats on winning!");
+    
+    self.currentPlayer = self.players[self.currentIndex];
+    NSLog(@"%@ rolled a %d",[self.currentPlayer name], roll);
+    [self currentPlayer].currentSquare += roll;
+    
+    if([self currentPlayer].currentSquare >= 100){
+        NSLog(@"%@ reached 100. Congrats on winning!",[self currentPlayer].name);
         return YES;
     } else {
-        NSLog(@"You landed on %ld", (long)player.currentSquare);
+        NSLog(@"%@ landed on %ld",[self currentPlayer].name, (long)[self currentPlayer].currentSquare);
+        [self checkForSpecialTiles:[self currentPlayer]];
+        [self.players replaceObjectAtIndex:self.currentIndex withObject:self.currentPlayer];
+        
+        if(self.currentIndex == playerCount-1){
+            self.currentIndex = 0;
+        } else {
+        self.currentIndex++;
+        }
         return NO;
     }
+    
 }
 
 -(void)checkForSpecialTiles:(Player *)player {

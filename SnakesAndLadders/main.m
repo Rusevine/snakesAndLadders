@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "PlayerManager.h"
-#import "Player.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         PlayerManager *game = [[PlayerManager alloc] init];
-        [game createPlayers:2];
+        NSLog(@"WELCOME TO SNAKES AND LADDERS");
+        NSLog(@"Enter the Number of players.");
+        int playerNumber = [[PlayerManager userInputandParse] intValue];
+        [game createPlayers:playerNumber];
         
-        Player *player_one = [[Player alloc] init];
+     //   Player *player_one = [[Player alloc] init];
         BOOL gameOver = NO;
         
         while(gameOver == NO){
@@ -24,8 +26,7 @@ int main(int argc, const char * argv[]) {
             NSString *roll = [PlayerManager userInputandParse];
             
             if([roll isEqualToString:@"roll"]||[roll isEqualToString:@"r"]){
-                gameOver = [game rollDice:player_one];
-                [game checkForSpecialTiles:player_one];
+                gameOver = [game rollDice:playerNumber];
             }
         }
         
