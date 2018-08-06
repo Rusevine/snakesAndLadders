@@ -10,4 +10,8 @@
 
 @interface Player : NSObject
 
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSInteger currentSquare;
+
+
 @end

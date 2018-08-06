@@ -10,4 +10,6 @@
 
 @interface GameController : NSObject
 
+-(NSInteger) rollDice;
+
 @end

@@ -10,4 +10,11 @@
 
 @implementation Player
 
+-(instancetype) init {
+    if(self = [super init]){
+    _currentSquare = 0;
+    }
+    return self;
+}
+
 @end

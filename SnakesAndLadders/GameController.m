@@ -10,4 +10,10 @@
 
 @implementation GameController
 
+- (NSInteger)rollDice {
+    int roll = arc4random_uniform(6)+1;
+    NSLog(@"You rolled a %d", roll);
+    return roll;
+}
+
 @end
