@@ -17,8 +17,14 @@ int main(int argc, const char * argv[]) {
         BOOL gameOver = NO;
         
         while(gameOver == NO){
-            gameOver = [player_one updateSquare:[game rollDice]];
-            [game checkForSpecialTiles:player_one];
+            
+            NSLog(@"Type 'roll' to roll the dice.");
+            NSString *roll = [GameController userInputandParse];
+            
+            if([roll isEqualToString:@"roll"]){
+                gameOver = [player_one updateSquare:[game rollDice]];
+                [game checkForSpecialTiles:player_one];
+            }
         }
         
     }

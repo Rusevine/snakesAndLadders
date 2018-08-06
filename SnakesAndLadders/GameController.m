@@ -38,4 +38,12 @@
     }
 }
 
++(NSString*)userInputandParse{
+    char inputChar[255];
+    fgets(inputChar, 255, stdin);
+    
+    NSString *userAnswer = [[NSString alloc] initWithCString:inputChar encoding:NSUTF8StringEncoding];
+    return [userAnswer stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 @end

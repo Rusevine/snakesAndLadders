@@ -13,5 +13,6 @@
 
 -(NSInteger) rollDice;
 -(void) checkForSpecialTiles:(Player *)player;
++(NSString*)userInputandParse;
 
 @end
