@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Player.h"
 
 @interface GameController : NSObject
 
 -(NSInteger) rollDice;
+-(void) checkForSpecialTiles:(Player *)player;
 
 @end

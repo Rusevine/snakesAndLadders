@@ -17,6 +17,7 @@ int main(int argc, const char * argv[]) {
         
         for(int i=0;i<12;i++){
             [player_one updateSquare:[game rollDice]];
+            [game checkForSpecialTiles:player_one];
         }
     }
     return 0;
