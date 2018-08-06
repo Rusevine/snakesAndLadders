@@ -14,11 +14,13 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         GameController *game = [[GameController alloc] init];
         Player *player_one = [[Player alloc] init];
+        BOOL gameOver = NO;
         
-        for(int i=0;i<12;i++){
-            [player_one updateSquare:[game rollDice]];
+        while(gameOver == NO){
+            gameOver = [player_one updateSquare:[game rollDice]];
             [game checkForSpecialTiles:player_one];
         }
+        
     }
     return 0;
 }
