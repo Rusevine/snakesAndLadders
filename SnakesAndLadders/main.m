@@ -16,7 +16,7 @@ int main(int argc, const char * argv[]) {
         Player *player_one = [[Player alloc] init];
         
         for(int i=0;i<12;i++){
-            [game rollDice];
+            [player_one updateSquare:[game rollDice]];
         }
     }
     return 0;

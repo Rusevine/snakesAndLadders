@@ -12,9 +12,14 @@
 
 -(instancetype) init {
     if(self = [super init]){
-    _currentSquare = 0;
+    _currentSquare = 1;
     }
     return self;
+}
+
+-(void)updateSquare:(NSInteger)roll {
+    self.currentSquare += roll;
+    NSLog(@"You landed on %ld", (long)self.currentSquare);
 }
 
 @end

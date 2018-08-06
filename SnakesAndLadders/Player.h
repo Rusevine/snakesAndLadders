@@ -13,5 +13,7 @@
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSInteger currentSquare;
 
+-(void) updateSquare:(NSInteger)roll;
+
 
 @end
